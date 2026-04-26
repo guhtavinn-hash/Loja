@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban style</title>
+
+<style>
+:root{
+--bg:#0f0f12;
+--card:#18181f;
+--accent:#ff3d6e;
+--accent2:#7b5cff;
+--text:#fff;
+--muted:#aaa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+body{background:var(--bg);color:var(--text)}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:rgba(20,20,30,0.8);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+background:linear-gradient(45deg,var(--accent),var(--accent2));
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* BANNER */
+.banner{
+height:380px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1441986300917-64674bd600d8");
+background-size:cover;
+margin:20px;
+border-radius:20px;
+}
+
+.banner-content{
+background:rgba(0,0,0,0.5);
+padding:30px;
+border-radius:15px;
+}
+
+.banner-btn{
+display:inline-block;
+padding:10px 20px;
+background:linear-gradient(45deg,#ff3d6e,#7b5cff);
+border-radius:10px;
+color:#fff;
+text-decoration:none;
+margin-top:10px;
+}
+
+/* GRID */
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:20px;
+}
+
+/* CARD */
+.card{
+background:var(--card);
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.content{padding:10px}
+
+.price{color:var(--accent);font-weight:bold}
+
+/* BOTÕES */
+.btn{
+display:block;
+text-align:center;
+padding:8px;
+border-radius:8px;
+margin-top:5px;
+text-decoration:none;
+color:#fff;
+}
+
+.buy{background:linear-gradient(45deg,#ff3d6e,#7b5cff)}
+.cart{background:#333}
+
+/* CARRINHO CSS */
+#cart-toggle{display:none}
+
+.cart{
+position:fixed;
+top:0;
+right:-320px;
+width:300px;
+height:100%;
+background:#14141b;
+padding:20px;
+transition:0.3s;
+}
+
+#cart-toggle:checked ~ .cart{
+right:0;
+}
+
+/* BOTÃO FLUTUANTE */
+.open-cart{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:linear-gradient(45deg,#ff3d6e,#7b5cff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:60px;
+height:60px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.whatsapp img{width:32px}
+
+footer{
+text-align:center;
+padding:20px;
+color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">NovaWear</div>
+<label for="cart-toggle" class="btn buy">Carrinho</label>
+</header>
+
+<section class="banner">
+<div class="banner-content">
+<h1>Nova Coleção 2026</h1>
+<p>Estilo moderno e profissional</p>
+<a href="#" class="banner-btn">Comprar Agora</a>
+</div>
+</section>
+
+<input type="checkbox" id="cart-toggle">
+
+<div class="cart">
+<h2>Seu Carrinho</h2>
+<p>Itens apareceriam aqui</p>
+<p>Total: R$ 0,00</p>
+<a class="btn buy" href="https://mpago.la/SEULINK" target="_blank">Finalizar</a>
+</div>
+
+<div class="container">
+
+<!-- 15 PRODUTOS -->
+<div class="card"><img src="https://images.unsplash.com/photo-1520975693411"><div class="content"><h3>Camiseta Street</h3><p class="price">R$49,90</p><a class="btn cart">Adicionar</a><a class="btn buy" href="#">Comprar</a></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1556821840"><div class="content"><h3>Moletom</h3><p class="price">R$129,90</p><a class="btn cart">Adicionar</a><a class="btn buy" href="#">Comprar</a></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1542272604"><div class="content"><h3>Calça</h3><p class="price">R$139,90</p><a class="btn cart">Adicionar</a><a class="btn buy" href="#">Comprar</a></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1517841905240"><div class="content"><h3>Vestido</h3><p class="price">R$99,90</p><a class="btn cart">Adicionar</a><a class="btn buy" href="#">Comprar</a></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1503341455253"><div class="content"><h3>Cropped</h3><p class="price">R$39,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975928316"><div class="content"><h3>Oversized</h3><p class="price">R$59,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1521335629791"><div class="content"><h3>Short</h3><p class="price">R$59,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975742603"><div class="content"><h3>Conjunto</h3><p class="price">R$159,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975999999"><div class="content"><h3>Bermuda</h3><p class="price">R$69,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975682031"><div class="content"><h3>Calça Slim</h3><p class="price">R$119,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975600001"><div class="content"><h3>Vestido Longo</h3><p class="price">R$129,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1514996937319"><div class="content"><h3>Top</h3><p class="price">R$29,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975749999"><div class="content"><h3>Camisa</h3><p class="price">R$89,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975969999"><div class="content"><h3>Jaqueta</h3><p class="price">R$179,90</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1520975699991"><div class="content"><h3>Blusa</h3><p class="price">R$59,90</p></div></div>
+
+</div>
+
+<label for="cart-toggle" class="open-cart">🛒</label>
+
+<a class="whatsapp" href="https://wa.me/5511999999999" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<footer>
+© 2026 NovaWear
+</footer>
+
+</body>
+</html>
